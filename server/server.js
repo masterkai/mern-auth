@@ -19,8 +19,8 @@ if (process.env.NODE_ENV === "development") {
 // middleware
 app.use("/api", authRoutes);
 
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-  console.log(`Api is running on port${port}`);
+  console.log(`Api is running on port:${port} - ${process.env.NODE_ENV}`);
 });
