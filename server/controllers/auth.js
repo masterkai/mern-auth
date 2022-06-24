@@ -1,5 +1,6 @@
 exports.signup = (req, res) => {
-    res.json({
-        data: 'you hit signup endpoint yay from controllers'
-    });
+  console.log("REQ BODY ON SIGNUP", req.body);
+  res.json({
+    data: "you hit signup endpoint yay from controllers",
+  });
 };

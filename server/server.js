@@ -6,6 +6,17 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
 
+// connect to db
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    // useFindAndModify: false,
+    // useUnifiedTopology: true,
+    // useCreateIndex: true,
+  })
+  .then(() => console.log("DB connected"))
+  .catch((err) => console.log("DB CONNECTION ERROR: ", err.message));
+
 // import routes
 const authRoutes = require("./routes/auth");
 
