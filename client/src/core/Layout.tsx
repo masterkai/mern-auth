@@ -1,6 +1,22 @@
-import { Fragment } from "react";
-import { ReactNode } from "react";
+import React, { ReactNode, Fragment } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: #00a83d;
+
+  li {
+    a {
+      color: white;
+    }
+
+    list-style: none;
+    padding: 10px;
+  }
+`;
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,7 +24,7 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   const nav = () => (
-    <ul className="nav nav-tabs bg-primary">
+    <Nav>
       <li className="nav-item">
         <Link to="/" className="text-light nav-link">
           Home
@@ -19,7 +35,7 @@ function Layout({ children }: LayoutProps) {
           Signup
         </Link>
       </li>
-    </ul>
+    </Nav>
   );
 
   return (
